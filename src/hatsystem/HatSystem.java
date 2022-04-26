@@ -33,7 +33,7 @@ public class HatSystem {
 
         new Login().setVisible(true);
         new LoginMenu("Ottoadmin").setVisible(true);
-        new AddCustomer().setVisible(true);
+        //new EditStandardHat("1").setVisible(true);
         
 
     }
