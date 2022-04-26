@@ -39,7 +39,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TopIT");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("Images/topITcute32px.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Images/TopITcute32px.png")).getImage());
 
         jLabel1.setText("Användarnamn");
 

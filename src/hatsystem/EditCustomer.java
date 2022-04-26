@@ -277,7 +277,7 @@ public class EditCustomer extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("TopIT");
-        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Images/topITcute32px.png")).getImage());
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Images/TopITcute32px.png")).getImage());
 
         lbl_firstName.setText("Förnamn");
 
@@ -426,25 +426,24 @@ public class EditCustomer extends javax.swing.JFrame {
                 .addComponent(lbl_kundens_tidigare_ordrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(34, 34, 34)
-                            .addComponent(lblCheckLastName)
-                            .addGap(35, 35, 35)
-                            .addComponent(lblCheckPhone)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblCheckEmail)
-                            .addGap(52, 52, 52)
-                            .addComponent(lblCheckStreet)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblCheckPostal)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblCheckCity)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblCheckCountry))
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnShowOrder)
-                        .addComponent(lblCheckFirstName))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(lblCheckLastName)
+                        .addGap(35, 35, 35)
+                        .addComponent(lblCheckPhone)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblCheckEmail)
+                        .addGap(52, 52, 52)
+                        .addComponent(lblCheckStreet)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblCheckPostal)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblCheckCity)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblCheckCountry))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnShowOrder)
+                    .addComponent(lblCheckFirstName)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
