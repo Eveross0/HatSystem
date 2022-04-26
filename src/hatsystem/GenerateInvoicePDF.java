@@ -88,6 +88,7 @@ public class GenerateInvoicePDF extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("TopIT");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Images/TopITcute32px.png")).getImage());
+        setResizable(false);
 
         jLabel1.setText("Vikt i kg");
 

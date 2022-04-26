@@ -57,6 +57,7 @@ public class FindCustomerFromOrder extends javax.swing.JFrame {
         setTitle("TopIT");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Images/TopITcute32px.png")).getImage());
         setPreferredSize(new java.awt.Dimension(1220, 602));
+        setResizable(false);
 
         btnCreateCustomer.setText("Skapa ny kund");
         btnCreateCustomer.addActionListener(new java.awt.event.ActionListener() {

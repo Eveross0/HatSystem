@@ -60,6 +60,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         setTitle("TopIT");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Images/TopITcute32px.png")).getImage());
         setLocationByPlatform(true);
+        setResizable(false);
 
         lblChangePassword.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblChangePassword.setForeground(new java.awt.Color(153, 0, 0));
