@@ -52,13 +52,14 @@ public class EditCustomer extends javax.swing.JFrame {
         lblErrorMessage.setVisible(false);
         clearErrorMessages();
     }
-    
+
     /**
      * For editing from Sök-lista
-     * @param customerNr 
-     * @param loginMenu 
+     *
+     * @param customerNr
+     * @param loginMenu
      */
-       public EditCustomer(String customerNr, LoginMenu loginMenu) {
+    public EditCustomer(String customerNr, LoginMenu loginMenu) {
         this.customerNr = customerNr;
         this.loginMenu = loginMenu;
         customerNr();
@@ -71,12 +72,12 @@ public class EditCustomer extends javax.swing.JFrame {
         lblErrorMessage.setVisible(false);
         clearErrorMessages();
     }
-    
-    private void customerNr(){
-        customerID = Customer.getCustomerID(customerNr);        
+
+    private void customerNr() {
+        customerID = Customer.getCustomerID(customerNr);
     }
-    
-    private int orderID(){
+
+    private int orderID() {
         String stringOfOrders = listModel.getElementAt(listCustomerOrders.getSelectedIndex());
         int orderID = Integer.parseInt(stringOfOrders.substring(0, 5).trim());
         return orderID;
@@ -132,7 +133,9 @@ public class EditCustomer extends javax.swing.JFrame {
 
                 boolean changeAddress = true;
                 if (firstName.equalsIgnoreCase(oldFirstName) && lastName.equalsIgnoreCase(oldLastName) && telephone.equalsIgnoreCase(oldTelephone) && email.equalsIgnoreCase(oldEmail)) {
-                    //do nothing
+                    JOptionPane.showMessageDialog(null, "Ändringar sparade");
+                    loginMenu.fillCorrectCategory();
+                    dispose();
                 } else if (chosenCustomer.isEmpty()) {
                     SqlQuery.update("UPDATE customer SET First_Name = '" + firstName + "' WHERE Customer_ID = " + customerID + ";");
                     SqlQuery.update("UPDATE customer SET Last_Name = '" + lastName + "' WHERE Customer_ID = " + customerID + ";");
@@ -181,24 +184,23 @@ public class EditCustomer extends javax.swing.JFrame {
         listModel.clear();
         ArrayList<HashMap<String, String>> orders = SqlQuery.getMultipleRows("SELECT * FROM orders WHERE Customer = " + customerID + ";");
         int index = 0;
-        
+
         while (index < orders.size()) {
             HashMap<String, String> currentOrder = orders.get(index);
-            
-            
-            if(Order.checkIfActive(currentOrder.get("Orders_ID"))){
-            listModel.addElement(String.format("%-7s %-15s %-15s %-20s"
-                    + currentOrder.get("Total_Price"),
-                    currentOrder.get("Orders_ID"),
-                    currentOrder.get("Delivery_Date"),
-                    currentOrder.get("Order_Date"),
-                    currentOrder.get("Status")
-            ));
+
+            if (Order.checkIfActive(currentOrder.get("Orders_ID"))) {
+                listModel.addElement(String.format("%-7s %-15s %-15s %-20s"
+                        + currentOrder.get("Total_Price"),
+                        currentOrder.get("Orders_ID"),
+                        currentOrder.get("Delivery_Date"),
+                        currentOrder.get("Order_Date"),
+                        currentOrder.get("Status")
+                ));
             }
 
             index++;
         }
-        
+
     }
 
     private void fillCustomerInfo() {
@@ -227,9 +229,6 @@ public class EditCustomer extends javax.swing.JFrame {
 
         oldAddressID = address.get("Address_ID");
     }
-    
-    
-           
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -521,7 +520,7 @@ public class EditCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_saveActionPerformed
 
     private void btnShowOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowOrderActionPerformed
-        new EditOrder(orderID(), this).setVisible(true); 
+        new EditOrder(orderID(), this).setVisible(true);
     }//GEN-LAST:event_btnShowOrderActionPerformed
 
 
